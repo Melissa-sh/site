@@ -90,4 +90,68 @@
     if (a < 62) {
       x = a * a + 4 + 5;
     } else {
-      x = 1 /
+      x = 1 / (a * a) + 4 * a + 5;
+    }
+
+    out.value = "X = " + x.toFixed(3);
+  }
+
+  function openBing() {
+    window.open("https://www.bing.com/search", "_blank");
+  }
+</script>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="nav">
+    <h1>Навигация</h1>
+    <a href="finalzadacha.html"><b>Решение алгоритмической задачи</b></a>
+    <a href="index.html">Паспорт</a>
+  </div>
+
+  <div class="content">
+    <div class="task-card">
+      <ul>
+        <li>
+          <span class="label">Вопрос:</span>
+          <span>Дано вещественное число A. Вычислить: x = a<sup>2</sup> + 4 + 5; при A &lt; 62, в противном случае x = 1/(a<sup>2</sup>) + 4a + 5.</span>
+        </li>
+
+        <li>
+          <span class="label">Для поисковика:</span>
+          <input type="text" value="search" class="small">
+        </li>
+
+        <li>
+          <span class="label">Формулировка задачи:</span>
+          <textarea class="wide" readonly>Дано вещественное число A. Вычислить: x = a² + 4 + 5; при A < 62, в противном случае x = 1/(a²) + 4a + 5.</textarea>
+        </li>
+
+        <li>
+          <label class="label" for="a">Неизвестное A:</label>
+          <input type="text" id="a" class="small">
+        </li>
+
+        <li>
+          <span class="label">Результат решения задачи:</span>
+          <input type="text" id="x_out" class="wide" readonly value="X =">
+        </li>
+
+        <li>
+          <span class="label">Действие 1:</span>
+          <input type="button" class="btn" value="Проверить" onclick="checkX()">
+        </li>
+
+        <li>
+          <span class="label">Действие 2:</span>
+          <input type="button" class="btn" value="Отправить" onclick="openBing()">
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
