@@ -1,129 +1,93 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="utf-8" />
+<meta charset="UTF-8">
 <title>Решение алгоритмической задачи</title>
 <style>
-  
-  body{
+  body {
     font-family: Arial, sans-serif;
-    background:#fffcfc;
-    color:#222;
-    font-size:18px; line-height:1.6;
-    margin:0; padding:40px 60px;
+    background: #fffcfc;
+    color: #222;
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 40px 60px;
   }
 
-  .container{
-    display:flex; align-items:flex-start; justify-content:flex-start;
-    gap:80px; max-width:1100px; margin:0 auto;
+  .container {
+    display: flex;
+    align-items: flex-start;
+    gap: 80px;
+    max-width: 1100px;
+    margin: 0 auto;
   }
 
-  .nav{ width:250px; }
-  .nav h1{ margin:0 0 20px; font-size:28px; color:#111; }
-  .nav a{ display:block; margin-bottom:12px; font-size:18px; color:#5a2d8c; text-decoration:none; }
-  .nav a:hover{ text-decoration:underline; }
+  .nav {
+    width: 250px;
+  }
+  .nav h1 {
+    margin: 0 0 20px;
+    font-size: 28px;
+    color: #111;
+  }
+  .nav a {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 18px;
+    color: #5a2d8c;
+    text-decoration: none;
+  }
+  .nav a:hover { text-decoration: underline; }
 
-  
-  .content{ flex:1; }
+  .content { flex: 1; }
 
-
-  .task-card{
-    background:#fff;
-    border:1px solid #d6d6d6;
-    border-radius:8px;
-    padding:20px 24px;
-    box-shadow:0 4px 12px rgba(0,0,0,.06);
+  .task-card {
+    background: #fff;
+    border: 1px solid #d6d6d6;
+    border-radius: 8px;
+    padding: 20px 24px;
   }
 
- 
-  ul{ list-style:none; margin:0; padding:0; }
-  li{ margin-bottom:10px; }
-  .label{ display:inline-block; min-width:220px; vertical-align:top; }
+  ul { list-style: none; margin: 0; padding: 0; }
+  li { margin-bottom: 10px; }
+  .label { display: inline-block; min-width: 220px; }
 
-  input[type="text"], textarea{
-    font-size:18px; padding:6px 8px; box-sizing:border-box;
-    border:1px solid #ccc; border-radius:4px; background:#fff;
+  input[type="text"], textarea {
+    font-size: 18px;
+    padding: 6px 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #fff;
   }
-  .small{ width:160px; }
-  .wide{ width:560px; }
-  textarea{ height:100px; resize:none; }
 
-  .btn{
-    font-size:18px; padding:10px 22px; cursor:pointer;
-    background:#54866c; color:#fff; border:none; border-radius:6px;
-    transition:background .2s;
+  .small { width: 160px; }
+  .wide { width: 560px; }
+  textarea { height: 100px; resize: none; }
+
+  .btn {
+    font-size: 18px;
+    padding: 10px 22px;
+    cursor: pointer;
+    background: rgb(84, 134, 108);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
   }
-  .btn:hover{ background:#000; }
+  .btn:hover { background: #000; }
 </style>
 
 <script>
-  function parseReal(s){ return Number(String(s).trim().replace(",", ".")); }
+  function checkX() {
+    const a = parseFloat(document.getElementById("a").value);
+    const out = document.getElementById("x_out");
+    if (isNaN(a)) {
+      out.value = "X = ошибка ввода A";
+      return;
+    }
 
-  function checkX(){
-    const aEl=document.getElementById("a");
-    const out=document.getElementById("x_out");
-    const a=parseReal(aEl.value);
-    if(!isFinite(a)){ out.value="X = ошибка ввода A"; return; }
-    const x = (a<62) ? (a**2+4+5) : (1/(a**2)+4*a+5);
-    const xFmt = (Math.abs(x)<1e12)?(Math.round(x*1e6)/1e6).toString():String(x);
-    out.value="X = "+xFmt;
-  }
-
-  function openBing(){ window.open("https://www.bing.com/search","_blank"); }
-</script>
-</head>
-<body>
-
-<div class="container">
- 
-  <div class="nav">
-    <h1>Навигация</h1>
-    <a href="finalzadacha.html"><b>Решение алгоритмической задачи</b></a>
-    <a href="index.html">Паспорт</a>
-  </div>
-
-  
-  <div class="content">
-    <div class="task-card">
-      <ul>
-        <li>
-          <span class="label">Вопрос:</span>
-          <span>Дано вещественное число A. Вычислить: x = a<sup>2</sup> + 4 + 5; при A &lt; 62, в противном случае x = 1/(a<sup>2</sup>) + 4a + 5.</span>
-        </li>
-
-        <li>
-          <span class="label">Для поисковика:</span>
-          <input type="text" value="search" class="small" />
-        </li>
-
-        <li>
-          <span class="label">Формулировка задачи:</span>
-          <textarea class="wide" readonly>Дано вещественное число A. Вычислить: x = a2 + 4 + 5; при A < 62, в противном случае x = 1/(a2) + 4a + 5.</textarea>
-        </li>
-
-        <li>
-          <label class="label" for="a">Неизвестное A:</label>
-          <input type="text" id="a" class="small" />
-        </li>
-
-        <li>
-          <span class="label">Результат решения задачи:</span>
-          <input type="text" id="x_out" class="wide" readonly value="X =" />
-        </li>
-
-        <li>
-          <span class="label">Действие 1:</span>
-          <input type="button" class="btn" value="Проверить" onclick="checkX()" />
-        </li>
-
-        <li>
-          <span class="label">Действие 2:</span>
-          <input type="button" class="btn" value="Отправить" onclick="openBing()" />
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-</body>
-</html>
+    let x;
+    if (a < 62) {
+      x = a * a + 4 + 5;
+    } else {
+      x = 1 /
