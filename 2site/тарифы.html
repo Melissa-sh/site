@@ -8,15 +8,17 @@
   <style>
     :root { --maxw: 1100px; }
     * { box-sizing: border-box; }
-    body { margin:0; font-family: system-ui, -apple-system, Arial, sans-serif; line-height:1.5; background:#fff; color:#222; }
-    header, main, footer { max-width: var(--maxw); margin: 0 auto; padding: 16px; }
+    body {
+      margin:0; font-family: system-ui, -apple-system, Arial, sans-serif;
+      line-height:1.5; background:#fff; color:#222;
+    }
+    header, main { max-width: var(--maxw); margin: 0 auto; padding: 16px; }
 
     .logo { position: absolute; top: 20px; left: 30px; }
     .logo img { width: 80px; height: auto; }
 
     .hero { padding: 56px 16px 24px; text-align: center; position: relative; }
     .hero h1 { margin: 0 0 8px; font-size: clamp(28px, 5vw, 56px); letter-spacing: .03em; text-transform: uppercase; }
-    .hero p.sub { margin: 4px 0; opacity: .8; }
 
     .top-actions { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin: 24px auto 8px; }
     .btn { display:inline-block; padding: 10px 16px; border:1px solid #222; text-decoration:none; color:#222; border-radius:6px; }
@@ -31,7 +33,6 @@
     section > h2 { margin: 0 0 12px; font-size: clamp(22px, 3.2vw, 32px); }
 
     .grid { display:grid; gap:16px; grid-template-columns: repeat(1, minmax(0,1fr)); }
-    @media (min-width: 640px) { .grid-2 { grid-template-columns: repeat(2, 1fr); } }
     @media (min-width: 880px) { .grid-3 { grid-template-columns: repeat(3, 1fr); } }
 
     .card { padding:16px; border:1px solid #ccc; border-radius:8px; }
@@ -40,9 +41,6 @@
     .muted { opacity:.85; }
 
     .list { margin:0; padding-left:18px; }
-    .center { text-align:center; }
-    .cta { display:inline-block; margin-top:12px; padding:10px 16px; border:1px solid #222; border-radius:6px; text-decoration:none; color:#222; }
-    .cta:hover { background:#222; color:#fff; }
 
     figure { text-align:center; margin:24px auto; }
     figure img { border-radius:8px; }
@@ -51,20 +49,18 @@
     .curator figure { margin:0; }
     .curator img { width:100%; height:auto; display:block; }
     .curator .thumb { width:110px; border:1px solid #ddd; border-radius:8px; }
-
-    footer { padding: 24px 16px 48px; opacity:.8; font-size:14px; }
   </style>
 </head>
 <body id="top">
 
-  <header class="hero" role="banner">
+  <header class="hero">
     <a href="index.html" class="logo">
       <img src="logo.png" alt="Логотип курса">
     </a>
 
     <h1>ТАРИФЫ</h1>
 
-    <nav class="top-actions" aria-label="Главные действия">
+    <nav class="top-actions">
       <a class="btn" href="index.html">Главная</a>
       <a class="btn active" href="тарифы.html">Тарифы</a>
       <a class="btn" href="программа.html">Кратко о курсе</a>
@@ -72,7 +68,7 @@
       <a class="btn" href="https://www.elle.com/fashion/" target="_blank">Тренды (Elle)</a>
     </nav>
 
-    <nav class="inner-nav" aria-label="Навигация по странице">
+    <nav class="inner-nav">
       <a href="#plans">Тарифы</a>
       <a href="#curators">Кураторы</a>
     </nav>
@@ -80,12 +76,10 @@
 
   <main id="content">
 
-
-    <section id="plans" aria-labelledby="plans-title">
+    <section id="plans">
       <h2 id="plans-title">Три тарифа на выбор</h2>
 
       <div class="grid grid-3">
-
         <article class="card">
           <h3>/ Базовый</h3>
           <p class="price">9 900&nbsp;₽</p>
@@ -95,10 +89,8 @@
             <li>Практические задания с автопроверкой</li>
             <li>Пожизненный доступ к материалам</li>
           </ul>
-    
         </article>
 
-      
         <article class="card">
           <h3>/ Стандарт</h3>
           <p class="price">19 900&nbsp;₽</p>
@@ -110,7 +102,6 @@
           </ul>
         </article>
 
-
         <article class="card">
           <h3>/ Премиум</h3>
           <p class="price">34 900&nbsp;₽</p>
@@ -118,21 +109,19 @@
           <ul class="list">
             <li>Все из «Стандарта»</li>
             <li>Индивидуальный план развития</li>
-            <li>Личный разбор портфолио </li>
+            <li>Личный разбор портфолио</li>
           </ul>
         </article>
       </div>
     </section>
 
-
-    <section id="curators" aria-labelledby="curators-title">
+    <section id="curators">
       <h2 id="curators-title">Кураторы проекта</h2>
 
       <div class="grid grid-3">
-
         <article class="card curator">
           <figure>
-            <a href="curator1.jpg" target="_blank" aria-label="Открыть фото куратора Анна в полном размере">
+            <a href="curator1.jpg" target="_blank">
               <img class="thumb" src="curator1.jpg" alt="Куратор Анна — портрет">
             </a>
           </figure>
@@ -142,10 +131,9 @@
           </div>
         </article>
 
-     
         <article class="card curator">
           <figure>
-            <a href="curator2.png" target="_blank" aria-label="Открыть фото куратора Даша в полном размере">
+            <a href="curator2.png" target="_blank">
               <img class="thumb" src="curator2.png" alt="Куратор Даша — портрет">
             </a>
           </figure>
@@ -155,22 +143,18 @@
           </div>
         </article>
 
-
         <article class="card curator">
           <figure>
-            <a href="curator3.png" target="_blank" aria-label="Открыть фото куратора Мария в полном размере">
+            <a href="curator3.png" target="_blank">
               <img class="thumb" src="curator3.png" alt="Куратор Мария — портрет">
             </a>
           </figure>
           <div>
             <h3>Мария — стилист-практик</h3>
             <p class="muted">Съёмки, look-book, коммерческие проекты для брендов.</p>
-
           </div>
         </article>
       </div>
-
-      
     </section>
 
     <nav class="inner-nav">
