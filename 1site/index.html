@@ -18,9 +18,9 @@
   .container {
     display: flex;
     align-items: flex-start;
-    justify-content: space-between;
-    gap: 60px;
-    max-width: 1400px;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
     margin: 0 auto;
   }
 
@@ -40,9 +40,7 @@
     font-size: 18px;
     margin-bottom: 10px;
   }
-  .nav a:hover {
-    text-decoration: underline;
-  }
+  .nav a:hover { text-decoration: underline; }
 
   .passport-section {
     display: flex;
@@ -55,13 +53,11 @@
     width: 320px;
     margin: 0 auto 20px auto;
   }
-
   .passport-container img {
     width: 100%;
     height: auto;
     display: block;
     border-radius: 4px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
 
   .overlay-text {
@@ -72,7 +68,6 @@
     font-size: 18px;
     letter-spacing: 1px;
   }
-
 
   #surname-overlay { top: 54%; left: 48%; }
   #name-overlay { top: 61%; left: 48%; }
@@ -96,29 +91,24 @@
     transition: background-color 0.3s;
     margin-top: 20px;
   }
-  button:hover {
-    background-color: #000;
-  }
+  button:hover { background-color: #000; }
 
   .screenshot-section {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-
   .screenshot-section img {
-    width: 600px;
-    height: auto;
+    max-width: 600px;
+    width: 100%;
     border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
   }
-
   .screenshot-section p {
     font-size: 14px;
     color: #555;
     text-align: center;
-    margin-top: 8px;
+    margin-top: 6px;
   }
 </style>
 </head>
@@ -133,7 +123,7 @@
 
   <div class="passport-section">
     <div class="passport-container">
-      <img src="./pasport.jpg" alt="Паспорт">
+      <img src="pasport.jpg" alt="Паспорт">
       <div class="overlay-text" id="surname-overlay">Шангареева</div>
       <div class="overlay-text" id="name-overlay">Мелисса</div>
       <div class="overlay-text" id="year-overlay">01.11.2006</div>
@@ -148,54 +138,42 @@
     <button onclick="change()">Изменить язык</button>
   </div>
 
-
   <div class="screenshot-section">
-    <img src="./скрин_экрана .png" alt="Скрин из DOM">
-    <p>DOM_JS. СЧИТЫВАЕМ ИНФОРМАЦИЮ ИЗ DOM</p>
+    <img src="скрин_экрана.png" alt="Скрин из DOM">
+    <p>Снимок из DOM-дерева (пример выполнения JS)</p>
   </div>
 </div>
 
 <script>
-  const original = {
-    surname: 'Шангареева',
-    name: 'Мелисса',
-    middle: 'Азатовна',
-    gender: 'ЖЕН',
-    birth: 'г. САНКТ-ПЕТЕРБУРГ',
-    birthDate: '01.11.2006',
-    issuedBy: 'ОТДЕЛОМ УФМС',
-    issuedWhere: 'ПО САНКТ-ПЕТЕРБУРГУ',
-    issuedDate: '03.11.2017',
+  const ru = {
+    surname: 'Шангареева', name: 'Мелисса', middle: 'Азатовна',
+    gender: 'ЖЕН', birth: 'г. САНКТ-ПЕТЕРБУРГ',
+    birthDate: '01.11.2006', issuedBy: 'ОТДЕЛОМ УФМС',
+    issuedWhere: 'ПО САНКТ-ПЕТЕРБУРГУ', issuedDate: '03.11.2017',
     code: '948-265'
   };
-
-  const translated = {
-    surname: 'Shangareeva',
-    name: 'Melissa',
-    middle: 'Azatovna',
-    gender: 'F',
-    birth: 'Saint Petersburg',
-    birthDate: '01.11.2006',
-    issuedBy: 'Department of UFMS',
-    issuedWhere: 'for Saint Petersburg',
-    issuedDate: '03.11.2017',
+  const en = {
+    surname: 'Shangareeva', name: 'Melissa', middle: 'Azatovna',
+    gender: 'F', birth: 'Saint Petersburg',
+    birthDate: '01.11.2006', issuedBy: 'Department of UFMS',
+    issuedWhere: 'for Saint Petersburg', issuedDate: '03.11.2017',
     code: '948-265'
   };
-
-  let isRus = true;
-
+  let rus = true;
   function change() {
-    document.getElementById('surname-overlay').innerText = isRus ? translated.surname : original.surname;
-    document.getElementById('name-overlay').innerText = isRus ? translated.name : original.name;
-    document.getElementById('middle-name').innerText = isRus ? translated.middle : original.middle;
-    document.getElementById('gender').innerText = isRus ? translated.gender : original.gender;
-    document.getElementById('year-overlay').innerText = isRus ? translated.birthDate : original.birthDate;
-    document.getElementById('place-birth').innerText = isRus ? translated.birth : original.birth;
-    document.getElementById('kem-vidan').innerText = isRus ? translated.issuedBy : original.issuedBy;
-    document.getElementById('place-vidan').innerText = isRus ? translated.issuedWhere : original.issuedWhere;
-    document.getElementById('date-vidan').innerText = isRus ? translated.issuedDate : original.issuedDate;
-    document.getElementById('code').innerText = isRus ? translated.code : original.code;
-    isRus = !isRus;
+    const d = id => document.getElementById(id);
+    const set = rus ? en : ru;
+    d('surname-overlay').innerText = set.surname;
+    d('name-overlay').innerText = set.name;
+    d('middle-name').innerText = set.middle;
+    d('gender').innerText = set.gender;
+    d('year-overlay').innerText = set.birthDate;
+    d('place-birth').innerText = set.birth;
+    d('kem-vidan').innerText = set.issuedBy;
+    d('place-vidan').innerText = set.issuedWhere;
+    d('date-vidan').innerText = set.issuedDate;
+    d('code').innerText = set.code;
+    rus = !rus;
   }
 </script>
 
