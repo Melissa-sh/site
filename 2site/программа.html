@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Онлайн курс — Тарифы</title>
+  <style>
+    :root{
+      --maxw: 1100px;
+      --bg-url: url("background.jpg");   /* фон (серый, мятого типа) */
+      --photo-url: url("photo_table.png"); /* фото в центре таблицы */
+    }
+
+    *{ box-sizing: border-box; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Arial, sans-serif;
+      line-height:1.5;
+      background:#fff; 
+      color:#222;
+    }
+
+    header, main{ 
+      max-width: var(--maxw); 
+      margin:0 auto; 
+      padding:16px; 
+    }
+
+    .logo{ position:absolute; top:20px; left:30px; }
+    .logo img{ width:80px; height:auto; }
+
+    .hero{ padding:56px 16px 24px; text-align:center; position:relative; }
+    .hero h1{ margin:0 0 8px; font-size:clamp(28px,5vw,56px); letter-spacing:.03em; text-transform:uppercase; }
+
+    .top-actions{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin:24px auto 8px; }
+    .btn{ display:inline-block; padding:10px 16px; border:1px solid #222; color:#222; text-decoration:none; border-radius:6px; }
+    .btn:hover{ background:#222; color:#fff; }
+    .active{ background:#000; color:#fff; }
+
+    /* === Таблица === */
+    .wrap{ display:flex; justify-content:center; }
+    .brief-title{
+      text-align:center; 
+      font-weight:800; 
+      font-size:32px; /* уменьшено как на главной */
+      margin:24px 0 16px;
+    }
+
+    .brief-table{
+      width:880px;
+      border-collapse:collapse;
+      border:3px solid #333;
+      background:#ddd;
+      margin:0 auto 40px;
+      table-layout:fixed;
+      box-shadow:0 8px 20px rgba(0,0,0,.15);
+    }
+    .brief-table td{
+      border:2px solid #333;
+      padding:14px;
+      vertical-align:middle;
+      background-image:var(--bg-url);
+      background-size:cover;
+      background-position:center;
+    }
+
+   
+    .cell-logo{ width:180px; text-align:center; }
+    .cell-logo img{
+      width:100px; height:auto; display:block; margin:0 auto;
+    }
+    .cell-headline{
+      font-size:24px;
+      font-weight:800;
+      text-align:center;
+    }
+
+
+    .cell-left{
+      width:180px;
+      text-align:center;
+      font-weight:700;
+    }
+    .arrow{ display:block; font-size:28px; margin-top:8px; }
+
+    .cell-photo{
+      width:360px;
+      padding:0; 
+    }
+    .photo-inner{
+      width:100%;
+      height:240px;
+      background-image:var(--photo-url);
+      background-size:cover;
+      background-position:center;
+      border:none;
+    }
+
+    .cell-desc{
+      font-weight:800;
+      font-size:16px;
+      line-height:1.4;
+      padding-right:10px;
+    }
+
+    /* строка 3 */
+    .cell-foot-left{
+      font-weight:800;
+    }
+    .cell-foot-right{
+      width:200px;
+      text-align:right;
+      font-weight:800;
+    }
+
+    @media (max-width:960px){
+      .brief-table{ width:100%; }
+    }
+  </style>
+</head>
+<body id="top">
+
+  <header class="hero" role="banner">
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="Логотип курса">
+    </a>
+
+    <h1>ОНЛАЙН КУРС</h1>
+
+    <nav class="top-actions" aria-label="Главные действия">
+      <a class="btn" href="index.html">Главная</a>
+      <a class="btn" href="тарифы.html">Тарифы</a>
+      <a class="btn active" href="программа.html">Кратко о курсе </a>
+      <a class="btn" href="записаться.html">Записаться</a>
+      <a class="btn" href="https://www.elle.com/fashion/" target="_blank">Тренды (Elle)</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2 class="brief-title">Сжатая информация о курсе</h2>
+
+    <div class="wrap">
+      <table class="brief-table" role="grid" aria-label="информация о курсе">
+  
+        <tr>
+          <td class="cell-logo">
+            <img src="logo.png" alt="Логотип курса">
+          </td>
+          <td class="cell-headline" colspan="2">
+            "От новичка до профессионального стилиста"
+          </td>
+        </tr>
+
+      
+        <tr>
+          <td class="cell-left">
+            что вас ждет
+            <span class="arrow">→</span>
+          </td>
+
+          <td class="cell-photo">
+            <div class="photo-inner" aria-label="фото курса"></div>
+          </td>
+
+          <td class="cell-desc">
+            Курс по стилю и визуальному имиджу: капсула, пропорции, работа с цветом,
+            базовые силуэты, съёмки и портфолио. Основатель — практикующий стилист,
+            арт-директор коллабораций и преподаватель. Обучение — 6 недель, еженедельные
+            разборы домашних заданий и закрытый чат поддержки выпускников.
+          </td>
+        </tr>
+
+        <!-- ROW 3 -->
+        <tr>
+          <td class="cell-foot-left" colspan="2">
+            По вопросам обращайтесь на почту style-course@mail.ru
+          </td>
+          <td class="cell-foot-right">
+            © 2025 Style Course
+          </td>
+        </tr>
+      </table>
+    </div>
+  </main>
+
+</body>
+</html>
