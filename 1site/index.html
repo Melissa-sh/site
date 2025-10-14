@@ -2,9 +2,14 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Паспорт</title>
 <style>
+  html, body {
+    width: 100%;
+    min-width: 1200px;
+    overflow-x: auto;
+  }
+
   body {
     font-family: Arial, sans-serif;
     background-color: #fffcfc;
@@ -20,7 +25,7 @@
     align-items: flex-start;
     justify-content: center;
     gap: 40px;
-    max-width: 1200px;
+    width: 1100px;
     margin: 0 auto;
   }
 
@@ -46,6 +51,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 360px;
   }
 
   .passport-container {
@@ -54,7 +60,7 @@
     margin: 0 auto 20px auto;
   }
   .passport-container img {
-    width: 100%;
+    width: 320px;
     height: auto;
     display: block;
     border-radius: 4px;
@@ -70,15 +76,15 @@
   }
 
   #surname-overlay { top: 54%; left: 48%; }
-  #name-overlay { top: 61%; left: 48%; }
-  #middle-name { top: 65%; left: 45%; }
-  #gender { top: 69%; left: 37%; }
-  #year-overlay { top: 69%; left: 59%; }
-  #place-birth { top: 74%; left: 39%; }
-  #kem-vidan { top: 8%; left: 23%; }
-  #place-vidan { top: 12%; left: 20%; }
-  #date-vidan { top: 20%; left: 19%; }
-  #code { top: 20%; left: 62%; }
+  #name-overlay    { top: 61%; left: 48%; }
+  #middle-name     { top: 65%; left: 45%; }
+  #gender          { top: 69%; left: 37%; }
+  #year-overlay    { top: 69%; left: 59%; }
+  #place-birth     { top: 74%; left: 39%; }
+  #kem-vidan       { top: 8%;  left: 23%; }
+  #place-vidan     { top: 12%; left: 20%; }
+  #date-vidan      { top: 20%; left: 19%; }
+  #code            { top: 20%; left: 62%; }
 
   button {
     background-color: rgb(84, 134, 108);
@@ -97,10 +103,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 600px;
   }
   .screenshot-section img {
-    max-width: 600px;
-    width: 100%;
+    width: 600px;
+    height: auto;
     border: 1px solid #ccc;
     border-radius: 6px;
   }
