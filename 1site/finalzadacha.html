@@ -77,29 +77,7 @@
   .btn:hover { background: #000; }
 </style>
 
-<script>
-  function checkX() {
-    const a = parseFloat(document.getElementById("a").value);
-    const out = document.getElementById("x_out");
-    if (isNaN(a)) {
-      out.value = "X = ошибка ввода A";
-      return;
-    }
 
-    let x;
-    if (a < 62) {
-      x = a * a + 4 + 5;
-    } else {
-      x = 1 / (a * a) + 4 * a + 5;
-    }
-
-    out.value = "X = " + x.toFixed(3);
-  }
-
-  function openBing() {
-    <form action="https://www.bing.com/" method="get" target="_blank" autocomplete="off">
-  }
-</script>
 </head>
 <body>
 
@@ -152,6 +130,6 @@
     </div>
   </div>
 </div>
-
+<script src="finalzadacha.js" defer></script>
 </body>
 </html>
