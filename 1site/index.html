@@ -2,14 +2,9 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Паспорт</title>
 <style>
-  html, body {
-    width: 100%;
-    min-width: 1200px;
-    overflow-x: auto;
-  }
-
   body {
     font-family: Arial, sans-serif;
     background-color: #fffcfc;
@@ -25,7 +20,7 @@
     align-items: flex-start;
     justify-content: center;
     gap: 40px;
-    width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
   }
 
@@ -51,7 +46,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 360px;
   }
 
   .passport-container {
@@ -60,7 +54,7 @@
     margin: 0 auto 20px auto;
   }
   .passport-container img {
-    width: 320px;
+    width: 100%;
     height: auto;
     display: block;
     border-radius: 4px;
@@ -76,15 +70,15 @@
   }
 
   #surname-overlay { top: 54%; left: 48%; }
-  #name-overlay    { top: 61%; left: 48%; }
-  #middle-name     { top: 65%; left: 45%; }
-  #gender          { top: 69%; left: 37%; }
-  #year-overlay    { top: 69%; left: 59%; }
-  #place-birth     { top: 74%; left: 39%; }
-  #kem-vidan       { top: 8%;  left: 23%; }
-  #place-vidan     { top: 12%; left: 20%; }
-  #date-vidan      { top: 20%; left: 19%; }
-  #code            { top: 20%; left: 62%; }
+  #name-overlay { top: 61%; left: 48%; }
+  #middle-name { top: 65%; left: 45%; }
+  #gender { top: 69%; left: 37%; }
+  #year-overlay { top: 69%; left: 59%; }
+  #place-birth { top: 74%; left: 39%; }
+  #kem-vidan { top: 8%; left: 23%; }
+  #place-vidan { top: 12%; left: 20%; }
+  #date-vidan { top: 20%; left: 19%; }
+  #code { top: 20%; left: 62%; }
 
   button {
     background-color: rgb(84, 134, 108);
@@ -103,11 +97,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 600px;
   }
   .screenshot-section img {
-    width: 600px;
-    height: auto;
+    max-width: 600px;
+    width: 100%;
     border: 1px solid #ccc;
     border-radius: 6px;
   }
@@ -118,6 +111,7 @@
     margin-top: 6px;
   }
 </style>
+
 </head>
 <body>
 
@@ -142,7 +136,8 @@
       <div class="overlay-text" id="gender">ЖЕН</div>
       <div class="overlay-text" id="place-birth">г. САНКТ-ПЕТЕРБУРГ</div>
     </div>
-    <button onclick="change()">Изменить язык</button>
+   <button id="for_click" type="button">Изменить язык</button>
+
   </div>
 
   <div class="screenshot-section">
@@ -150,39 +145,7 @@
     <p>Снимок из DOM-дерева (пример выполнения JS)</p>
   </div>
 </div>
-
-<script>
-  const ru = {
-    surname: 'Шангареева', name: 'Мелисса', middle: 'Азатовна',
-    gender: 'ЖЕН', birth: 'г. САНКТ-ПЕТЕРБУРГ',
-    birthDate: '01.11.2006', issuedBy: 'ОТДЕЛОМ УФМС',
-    issuedWhere: 'ПО САНКТ-ПЕТЕРБУРГУ', issuedDate: '03.11.2017',
-    code: '948-265'
-  };
-  const en = {
-    surname: 'Shangareeva', name: 'Melissa', middle: 'Azatovna',
-    gender: 'F', birth: 'Saint Petersburg',
-    birthDate: '01.11.2006', issuedBy: 'Department of UFMS',
-    issuedWhere: 'for Saint Petersburg', issuedDate: '03.11.2017',
-    code: '948-265'
-  };
-  let rus = true;
-  function change() {
-    const d = id => document.getElementById(id);
-    const set = rus ? en : ru;
-    d('surname-overlay').innerText = set.surname;
-    d('name-overlay').innerText = set.name;
-    d('middle-name').innerText = set.middle;
-    d('gender').innerText = set.gender;
-    d('year-overlay').innerText = set.birthDate;
-    d('place-birth').innerText = set.birth;
-    d('kem-vidan').innerText = set.issuedBy;
-    d('place-vidan').innerText = set.issuedWhere;
-    d('date-vidan').innerText = set.issuedDate;
-    d('code').innerText = set.code;
-    rus = !rus;
-  }
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
