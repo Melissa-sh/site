@@ -1,0 +1,173 @@
+:root {
+  --maxw: 1100px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Arial, sans-serif;
+  line-height: 1.5;
+  background: #fff;
+  color: #222;
+}
+
+header,
+main {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+}
+
+.logo img {
+  width: 80px;
+  height: auto;
+}
+
+.hero {
+  padding: 56px 16px 24px;
+  text-align: center;
+  position: relative;
+}
+
+.hero h1 {
+  margin: 0 0 8px;
+  font-size: clamp(28px, 5vw, 56px);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.top-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 24px auto 8px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border: 1px solid #222;
+  text-decoration: none;
+  color: #222;
+  border-radius: 6px;
+  background: transparent;
+}
+
+.btn:hover {
+  background: #222;
+  color: #fff;
+}
+
+.active {
+  background: #222;
+  color: #fff;
+}
+
+.inner-nav {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.inner-nav a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+}
+
+.inner-nav a:hover {
+  text-decoration: underline;
+}
+
+section {
+  margin: 40px 0;
+}
+
+section > h2 {
+  margin: 0 0 12px;
+  font-size: clamp(22px, 3.2vw, 32px);
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 600px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 880px) {
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.price {
+  font-size: clamp(20px, 3vw, 28px);
+  font-weight: 700;
+  margin: 8px 0 12px;
+}
+
+.muted {
+  opacity: 0.85;
+}
+
+.list {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.curator {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.curator figure {
+  margin: 0;
+}
+
+.curator img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.curator .thumb {
+  width: 110px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+@media (max-width: 480px) {
+  .curator {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}

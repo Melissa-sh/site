@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Онлайн курс — Записаться</title>
+  <meta name="description" content="Формы записи на онлайн-курс стилиста" />
+  <style>
+    :root { --maxw: 1100px; }
+    * { box-sizing: border-box; }
+    body {
+      margin:0; font-family: system-ui, -apple-system, Arial, sans-serif;
+      line-height:1.5; background:#fff; color:#222;
+    }
+    header, main { max-width: var(--maxw); margin: 0 auto; padding: 16px; }
+
+    .logo { position: absolute; top: 20px; left: 30px; }
+    .logo img { width: 80px; height: auto; }
+
+    .hero { padding: 56px 16px 24px; text-align: center; position: relative; }
+    .hero h1 {
+      margin: 0 0 8px; font-size: clamp(28px, 5vw, 56px);
+      letter-spacing: .03em; text-transform: uppercase;
+    }
+
+    .top-actions {
+      display:flex; gap:12px; justify-content:center; flex-wrap:wrap;
+      margin: 24px auto 8px;
+    }
+    .btn {
+      display:inline-block; padding: 10px 16px; border:1px solid #222;
+      text-decoration:none; color:#222; border-radius:6px;
+    }
+    .btn:hover { background:#222; color:#fff; }
+    .active { background:#222; color:#fff; }
+
+    .inner-nav { display:flex; justify-content:center; gap:25px; margin-top:20px; }
+    .inner-nav a { text-decoration:none; color:#000; font-weight:500; }
+    .inner-nav a:hover { text-decoration:underline; }
+
+    section { margin: 40px 0; }
+    section > h2 { margin: 0 0 12px; font-size: clamp(22px, 3.2vw, 32px); }
+
+    .card { padding:16px; border:1px solid #ccc; border-radius:8px; }
+
+    .form-row { display:grid; grid-template-columns: 1fr; gap:12px; margin:12px 0; }
+    @media (min-width:640px){ .form-row-2 { grid-template-columns: 1fr 1fr; } }
+
+    label { display:block; font-weight:600; margin-bottom:6px; }
+    input[type="text"], input[type="number"], input[type="tel"], input[type="email"],
+    input[type="date"], input[type="password"], select, textarea {
+      width:100%; padding:10px; border:1px solid #bbb; border-radius:6px; font:inherit;
+    }
+    textarea { min-height:110px; resize:vertical; }
+
+    .hint { font-size:12px; opacity:.8; margin-top:4px; }
+    .row-inline { display:flex; gap:16px; flex-wrap:wrap; }
+    .actions { margin-top:14px; display:flex; gap:10px; flex-wrap:wrap; }
+    .cta {
+      display:inline-block; padding:10px 16px; border:1px solid #222;
+      border-radius:6px; text-decoration:none; color:#222; background:#fff; cursor:pointer;
+    }
+    .cta:hover { background:#222; color:#fff; }
+  </style>
+</head>
+<body id="top">
+
+  <header class="hero">
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="Логотип курса">
+    </a>
+
+    <h1>ЗАПИСАТЬСЯ</h1>
+
+    <nav class="top-actions">
+      <a class="btn" href="index.html">Главная</a>
+      <a class="btn" href="тарифы.html">Тарифы</a>
+      <a class="btn" href="программа.html">Кратко о курсе</a>
+      <a class="btn active" href="записаться.html">Записаться</a>
+      <a class="btn" href="куратор.html">Стать куратором</a>
+      <a class="btn" href="https://www.elle.com/fashion/" target="_blank">Тренды (Elle)</a>
+    </nav>
+  </header>
+
+  <main id="content">
+
+
+    <section id="contact-form">
+      <h2 id="contact-title">Контактные данные</h2>
+      <article class="card">
+        <form action="https://www.bing.com/" method="get" target="_blank" autocomplete="off">
+         
+          <input type="hidden" name="form_id" value="contact_v1">
+
+          <div class="form-row form-row-2">
+            <div>
+              <label for="last_name">Фамилия</label>
+              <input type="text" id="last_name" name="last_name" placeholder="Введите фамилию" required value="Иванова" />
+            </div>
+            <div>
+              <label for="first_name">Имя</label>
+              <input type="text" id="first_name" name="first_name" placeholder="Введите имя" required value="Мария" />
+            </div>
+          </div>
+
+          <div class="form-row form-row-2">
+            <div>
+              <label for="group">Группа (номер)</label>
+              <input type="number" id="group" name="group" min="1" placeholder="Напр. 101" required value="101" />
+            </div>
+            <div>
+              <label for="phone">Мобильный телефон</label>
+              <input type="tel" id="phone" name="phone" placeholder="+7 900 000-00-00" value="+7 900 000-00-00" />
+            </div>
+          </div>
+
+          <div class="form-row form-row-2">
+            <div>
+              <label for="email">Электронная почта</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required value="student@example.com" />
+            </div>
+            <div>
+              <label for="sent_date">Дата отправки</label>
+              <input type="date" id="sent_date" name="sent_date" required value="2025-10-14" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label>Формат связи</label>
+            <div class="row-inline">
+              <label><input type="radio" name="contact_pref" value="whatsapp"> WhatsApp</label>
+              <label><input type="radio" name="contact_pref" value="telegram" checked> Telegram</label>
+              <label><input type="radio" name="contact_pref" value="email"> Email</label>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label><input type="checkbox" name="consent_personal" value="yes" checked> Согласен(а) на обработку персональных данных</label>
+          </div>
+
+          <div class="actions">
+            <button type="submit" class="cta">Отправить</button>
+          </div>
+        </form>
+      </article>
+    </section>
+    <nav class="inner-nav">
+      <a href="#top">К началу</a>
+    </nav>
+  </main>
+
+</body>
+</html>
